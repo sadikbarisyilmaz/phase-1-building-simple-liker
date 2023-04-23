@@ -5,6 +5,7 @@ const FULL_HEART = '♥'
 // Your JavaScript code goes here!
 const modal = document.querySelector("#modal")
 const hearts = document.querySelectorAll(".like-glyph")
+const modalMessage = document.querySelector("#modal-message")
 
 hearts.forEach(hearth => {
   hearth.innerHTML = EMPTY_HEART
@@ -19,6 +20,7 @@ hearts.forEach(hearth => {
     }
   })
   .catch(err => {
+    modalMessage.innerHTML = err
     modal.setAttribute("class", "")
     setTimeout(() => modal.setAttribute("class", "hidden"), 3000)
     console.log(err)
